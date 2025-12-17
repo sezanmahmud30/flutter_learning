@@ -73,6 +73,15 @@ class HomeActivity extends StatelessWidget{
 
       ),
 
+      floatingActionButton: FloatingActionButton(
+        elevation: 10,
+        child: Icon(Icons.add),
+        backgroundColor: Colors.amber,
+        onPressed:(){
+          MySnackBar("This is Floating Action button",context);
+        },
+      ),
+
 
 
 
