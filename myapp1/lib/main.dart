@@ -172,6 +172,71 @@ class HomeActivity extends StatelessWidget{
         ),
       ),
 
+      drawer: Drawer(
+
+        child: ListView(
+
+          children: [
+            DrawerHeader(
+              padding: EdgeInsets.all(0),
+
+              child: UserAccountsDrawerHeader(
+                decoration: BoxDecoration(color: Colors.deepOrangeAccent),
+
+                accountName: Padding(
+                  padding:  const EdgeInsets.only(top: 8),
+                  child:Text("Sezan Mahmud",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+
+                    ),
+                  ),
+                ),
+
+                accountEmail: Text(
+                  "sezanmahmud@gmail.com",
+                  style: TextStyle(color: Colors.black54),
+                ),
+
+                //currentAccountPicture: Image.network("https://scontent.fdac191-1.fna.fbcdn.net/v/t39.30808-1/595433681_844717088552870_4214136399129611571_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=100&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeFYLh0n_0bdcVokNHW8U0b6jq8qeeoR8CaOryp56hHwJvuCGJbBXyhOJCOA89M1AOD88ckLgyK5EgcnuqzVx_Uq&_nc_ohc=W0EfUqV4SXcQ7kNvwG4cP45&_nc_oc=AdnQUUbx-HFC7cKv9oGKQIAAbPUrW9aEhtEGMH0CKn0_TJtKLWOoUfzwn3ojrpKTW2U&_nc_zt=24&_nc_ht=scontent.fdac191-1.fna&_nc_gid=7V28SoEOjdc_bdb5zgR1MA&oh=00_AflqOlDtfqKalpnSTUp1_7R6cHxwzW1qlmXABvnwxZ_u1Q&oe=694657BE"),    // Picture Link
+                currentAccountPicture:CircleAvatar(backgroundImage: NetworkImage("https://avatars.githubusercontent.com/u/131911000?s=96&v=4"),),   // Circle Shape Avatar
+
+                onDetailsPressed: (){MySnackBar("This is my profile", context);},
+              ),
+            ),
+            // Drawer Header
+
+
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text("Home"),
+              onTap: (){
+                MySnackBar("This is Home",context);
+              },
+            ),
+
+            ListTile(
+                leading: Icon(Icons.person),
+                title: Text("Profile"),
+                onTap: (){
+                  MySnackBar("This is Profile",context);
+                }
+            ),
+
+            ListTile(
+                leading: Icon(Icons.email),
+                title: Text("Email"),
+                onTap: (){
+                  MySnackBar("This is Email",context);
+                }
+            ),
+
+          ],
+
+        ),
+      ),
 
 
 
