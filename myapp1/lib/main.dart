@@ -240,19 +240,32 @@ class HomeActivity extends StatelessWidget{
 
       //                         Container
 
-      body: Container(
-        height: 250,
-        width: 250,
-        alignment: Alignment.topCenter,
-        margin: EdgeInsets.all(15),
-        padding: EdgeInsets.all(5),
-        decoration: BoxDecoration(
-            color: Colors.amber,
-            border: Border.all(color: Colors.black,width: 6)
+      // body: Container(
+      //   height: 250,
+      //   width: 250,
+      //   alignment: Alignment.topCenter,
+      //   margin: EdgeInsets.all(15),
+      //   padding: EdgeInsets.all(5),
+      //   decoration: BoxDecoration(
+      //       color: Colors.amber,
+      //       border: Border.all(color: Colors.black,width: 6)
+      //
+      //   ),
+      //   child: Image.network("https://scontent.fdac191-1.fna.fbcdn.net/v/t39.30808-6/493937391_657139493977298_8241196125091346587_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGYNYoaIw_lW5G8Ii6sDuKyNm1M15GUgUc2bUzXkZSBR-Ke5jrokHffoHZVtCJD7hJhwYm44czk8B8TYpLeaOLi&_nc_ohc=0Sa0G8umMZkQ7kNvwFmNgd7&_nc_oc=AdnECHhOLIiQYTdt8xdPGnJGRwdrvojO-Ux2tLTQ4YzfVEax2KTE6VdFynY2BCwt-l8&_nc_zt=23&_nc_ht=scontent.fdac191-1.fna&_nc_gid=iSF35BaYH37lEsZC91GWuA&oh=00_AfkiVAfpepWFYIUzdqvhsVeqsN71CVrfaVKf2YHD1DyE2A&oe=694786D1"),
+      // )
 
-        ),
-        child: Image.network("https://scontent.fdac191-1.fna.fbcdn.net/v/t39.30808-6/493937391_657139493977298_8241196125091346587_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGYNYoaIw_lW5G8Ii6sDuKyNm1M15GUgUc2bUzXkZSBR-Ke5jrokHffoHZVtCJD7hJhwYm44czk8B8TYpLeaOLi&_nc_ohc=0Sa0G8umMZkQ7kNvwFmNgd7&_nc_oc=AdnECHhOLIiQYTdt8xdPGnJGRwdrvojO-Ux2tLTQ4YzfVEax2KTE6VdFynY2BCwt-l8&_nc_zt=23&_nc_ht=scontent.fdac191-1.fna&_nc_gid=iSF35BaYH37lEsZC91GWuA&oh=00_AfkiVAfpepWFYIUzdqvhsVeqsN71CVrfaVKf2YHD1DyE2A&oe=694786D1"),
-      )
+
+      //                    Row Container
+
+      body: Row(
+
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Container(height: 100,width: 100,child: Image.network("https://scontent.fdac191-1.fna.fbcdn.net/v/t39.30808-6/493937391_657139493977298_8241196125091346587_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGYNYoaIw_lW5G8Ii6sDuKyNm1M15GUgUc2bUzXkZSBR-Ke5jrokHffoHZVtCJD7hJhwYm44czk8B8TYpLeaOLi&_nc_ohc=0Sa0G8umMZkQ7kNvwFmNgd7&_nc_oc=AdnECHhOLIiQYTdt8xdPGnJGRwdrvojO-Ux2tLTQ4YzfVEax2KTE6VdFynY2BCwt-l8&_nc_zt=23&_nc_ht=scontent.fdac191-1.fna&_nc_gid=iSF35BaYH37lEsZC91GWuA&oh=00_AfkiVAfpepWFYIUzdqvhsVeqsN71CVrfaVKf2YHD1DyE2A&oe=694786D1"),),
+          Container(height: 100,width: 100,child: Image.network("https://scontent.fdac191-1.fna.fbcdn.net/v/t39.30808-6/493937391_657139493977298_8241196125091346587_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGYNYoaIw_lW5G8Ii6sDuKyNm1M15GUgUc2bUzXkZSBR-Ke5jrokHffoHZVtCJD7hJhwYm44czk8B8TYpLeaOLi&_nc_ohc=0Sa0G8umMZkQ7kNvwFmNgd7&_nc_oc=AdnECHhOLIiQYTdt8xdPGnJGRwdrvojO-Ux2tLTQ4YzfVEax2KTE6VdFynY2BCwt-l8&_nc_zt=23&_nc_ht=scontent.fdac191-1.fna&_nc_gid=iSF35BaYH37lEsZC91GWuA&oh=00_AfkiVAfpepWFYIUzdqvhsVeqsN71CVrfaVKf2YHD1DyE2A&oe=694786D1"),),
+          Container(height: 100,width: 100,child: Image.network("https://scontent.fdac191-1.fna.fbcdn.net/v/t39.30808-6/493937391_657139493977298_8241196125091346587_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGYNYoaIw_lW5G8Ii6sDuKyNm1M15GUgUc2bUzXkZSBR-Ke5jrokHffoHZVtCJD7hJhwYm44czk8B8TYpLeaOLi&_nc_ohc=0Sa0G8umMZkQ7kNvwFmNgd7&_nc_oc=AdnECHhOLIiQYTdt8xdPGnJGRwdrvojO-Ux2tLTQ4YzfVEax2KTE6VdFynY2BCwt-l8&_nc_zt=23&_nc_ht=scontent.fdac191-1.fna&_nc_gid=iSF35BaYH37lEsZC91GWuA&oh=00_AfkiVAfpepWFYIUzdqvhsVeqsN71CVrfaVKf2YHD1DyE2A&oe=694786D1"),),
+        ],
+      ),
 
 
 
