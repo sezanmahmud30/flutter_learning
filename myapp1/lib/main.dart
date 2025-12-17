@@ -56,7 +56,7 @@ class HomeActivity extends StatelessWidget{
                     Navigator.of(context).pop();
 
                   }, child: Text("Yes")),
-                  
+
                   TextButton(onPressed: (){Navigator.of(context).pop();}, child: Text("No")),            // No Button
                 ],
 
@@ -70,15 +70,19 @@ class HomeActivity extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
 
-    ButtonStyle buttonStyle = ElevatedButton.styleFrom(
-        padding: EdgeInsets.all(10),
-        backgroundColor: Colors.red,
-        foregroundColor: Colors.green,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(40))
-        )
-    );
+    // ButtonStyle buttonStyle = ElevatedButton.styleFrom(
+    //     padding: EdgeInsets.all(10),
+    //     backgroundColor: Colors.red,
+    //     foregroundColor: Colors.green,
+    //     shape: RoundedRectangleBorder(
+    //         borderRadius: BorderRadius.all(Radius.circular(40))
+    //     )
+    // );
 
+    ButtonStyle buttonStyle = ElevatedButton.styleFrom(
+      minimumSize: Size(double.infinity, 60)
+
+    );
 
     return Scaffold(
 
@@ -298,11 +302,26 @@ class HomeActivity extends StatelessWidget{
 
       //     Alert Dialog
 
-      body: Center(
+      // body: Center(
+      //
+      //   child: ElevatedButton( child: Text("Click me"),onPressed: (){MyAlartDialog(context);},),
+      //
+      // )
 
-        child: ElevatedButton( child: Text("Click me"),onPressed: (){MyAlartDialog(context);},),
 
-      )
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+
+        children: [
+          Padding(padding: EdgeInsets.all(15),child: TextField(decoration: InputDecoration(border: OutlineInputBorder(), labelText: "First Name"),),),
+          Padding(padding: EdgeInsets.all(15),child: TextField(decoration: InputDecoration(border: OutlineInputBorder(), labelText: "Last Name"),),),
+          Padding(padding: EdgeInsets.all(15),child: TextField(decoration: InputDecoration(border: OutlineInputBorder(), labelText: "Date of Birth"),),),
+          Padding(padding: EdgeInsets.all(15),child: TextField(decoration: InputDecoration(border: OutlineInputBorder(), labelText: "Email"),),),
+
+          Padding(padding: EdgeInsets.all(15),child: ElevatedButton(onPressed: (){}, child: Text("Submit"),style: buttonStyle,),)
+
+          ],
+      ),
 
     );
 
