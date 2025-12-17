@@ -38,6 +38,33 @@ class HomeActivity extends StatelessWidget{
     );
   }
 
+    // Alart Dialog
+
+  MyAlartDialog(context){
+
+    return showDialog(
+        context: context,
+        builder: (BuildContext context){
+          return Expanded(
+              child: AlertDialog(
+                title: Text("Alart !"),
+                content: Text("Do you want to delete !"),
+                actions: [
+
+                  TextButton(onPressed: (){
+                    MySnackBar("Delete Success", context);                                               // Yes Button
+                    Navigator.of(context).pop();
+
+                  }, child: Text("Yes")),
+                  
+                  TextButton(onPressed: (){Navigator.of(context).pop();}, child: Text("No")),            // No Button
+                ],
+
+              )
+          );
+        }
+    );
+  }
 
 
   @override
@@ -268,20 +295,14 @@ class HomeActivity extends StatelessWidget{
       // ),
 
 
-      //            Button
 
-      body: Row(
+      //     Alert Dialog
 
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          TextButton(onPressed: (){MySnackBar("Text Button Pressed", context);}, child: Text("Text Button")),
+      body: Center(
 
-          ElevatedButton(onPressed: (){MySnackBar("Elevated Button Pressed", context);}, child: Text("Elevated Button")),
+        child: ElevatedButton( child: Text("Click me"),onPressed: (){MyAlartDialog(context);},),
 
-          // OutlinedButton(onPressed: (){MySnackBar("OutLine Button Pressed", context);}, child: Text("OutLine Button"))
-
-        ],
-      ),
+      )
 
     );
 
