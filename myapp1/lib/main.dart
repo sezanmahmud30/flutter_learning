@@ -35,55 +35,80 @@ class MyApp extends StatelessWidget{
   }
 }
 
-class HomeActivity extends StatelessWidget{
+        // Home Activity
 
+class HomeActivity extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
 
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Home"),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          ElevatedButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> Activity1()));           //  Go Activity 1
+          }, child: Text("Go Activity 1")),
 
-    return DefaultTabController(
-        length: 8,
-        child: Scaffold(
+          ElevatedButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> Activity2()));           //  Go Activity 2
+          }, child: Text("Go Activity 2")),
           
-          appBar: AppBar(
-            title: Text("My App"),
-            bottom: TabBar(
-              isScrollable: true,
-              tabs: [
-                Tab(icon: Icon(Icons.home),text: "Home",),
-                Tab(icon: Icon(Icons.search),text: "Search",),
-                Tab(icon: Icon(Icons.settings),text: "Settings",),
-                Tab(icon: Icon(Icons.email),text: "Email",),
-                Tab(icon: Icon(Icons.contact_mail),text: "Contact",),
-                Tab(icon: Icon(Icons.person),text: "Person",),
-                Tab(icon: Icon(Icons.alarm),text: "Alarm",),
-                Tab(icon: Icon(Icons.account_balance),text: "Balance",)
+        ],
+      ),
 
-              ],
-
-              
-            ),
-          ),
-          
-          
-          body: TabBarView(
-            children: [
-              HomeFragment(),
-              SearchFragment(),
-              SettingsFragment(),
-              EmailFragment(),
-              ContactFragment(),
-              PersonFragment(),
-              AlarmFragment(),
-              BalanceFragment()
-            ],
-
-          ),
-
-
-        )
     );
+  }
+}
+
+        // Activity 1
+
+class Activity1 extends StatelessWidget{
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Activity1"),
+      ),
+
+      body: Center(
+        child: ElevatedButton(onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> Activity2()));       //  Go Activity 2
+        }, child: Text("Go Activity 2")),
+
+      ),
+
+    );
+
+  }
+}
+
+
+            // Activity 2
+
+class Activity2 extends StatelessWidget{
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Activity2"),
+      ),
+
+      body: Center(
+        child: ElevatedButton(onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> Activity1()));       //  Go Activity 1
+        }, child: Text("Go Activity 1")),
+
+      ),
+    );
+
 
   }
 }
