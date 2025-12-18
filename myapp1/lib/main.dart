@@ -47,14 +47,10 @@ class HomeActivity extends StatelessWidget{
         title: Text("Home"),
       ),
       body: Center(
-        child: LinearProgressIndicator(
-            color: Colors.amberAccent,
-            minHeight: 5,
-            backgroundColor: Colors.deepOrange,
+        child: Icon(Icons.monetization_on,size: 120,color: Colors.amber,)
 
-        ),
+
       )
-
 
     );
 
