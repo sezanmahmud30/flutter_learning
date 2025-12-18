@@ -46,48 +46,20 @@ class HomeActivity extends StatelessWidget{
       appBar: AppBar(
         title: Text("Home"),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          ElevatedButton(onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=> Activity1("This is from home to activity 1")));           //  Go Activity 1
-          }, child: Text("Go Activity 1")),
-
-          ElevatedButton(onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=> Activity2("This is from home to activity 2")));           //  Go Activity 2
-          }, child: Text("Go Activity 2")),
-          
-        ],
-      ),
-
-    );
-  }
-}
-
-        // Activity 1
-
-class Activity1 extends StatelessWidget{
-
-  String msg;
-
-   Activity1(
-      this.msg,
-      {super.key}
-      );
-
-  @override
-  Widget build(BuildContext context) {
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(msg),
-      ),
-
       body: Center(
-        child: ElevatedButton(onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context)=> Activity2("This is from activity 1 to activity 2")));       //  Go Activity 2
-        }, child: Text("Go Activity 2")),
+          child: Card(
+            elevation: 20,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+            shadowColor: Colors.amber,
+            color: Colors.lightGreen,
+            child: SizedBox(
+              height: 200,
+              width: 200,
+              child: Center(child: Text("This is Card"),),
 
+            ),
+
+          ),
       ),
 
     );
@@ -96,34 +68,5 @@ class Activity1 extends StatelessWidget{
 }
 
 
-            // Activity 2
-
-class Activity2 extends StatelessWidget{
-
-  String msg;
-   Activity2(
-       this.msg,
-      {super.key}
-      );
 
 
-  @override
-  Widget build(BuildContext context) {
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(msg),
-      ),
-
-      body: Center(
-
-        child: ElevatedButton(onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context)=> Activity1("This is from activity 2 to activity 1")));       //  Go Activity 1
-        }, child: Text("Go Activity 1")),
-
-      ),
-    );
-
-
-  }
-}
