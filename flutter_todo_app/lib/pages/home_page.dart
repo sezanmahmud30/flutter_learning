@@ -32,13 +32,19 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  void deleteTask(int index){
+    setState(() {
+      todoList.removeAt(index);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.deepPurple.shade300,
+        backgroundColor: Colors.deepPurple.shade200,
 
       appBar: AppBar(
-        title:const Text("Simple Todo"),
+        title:const Text("Todo App"),
         centerTitle: true,
         backgroundColor: Colors.deepPurple,
         foregroundColor: Colors.white,
@@ -49,43 +55,47 @@ class _HomePageState extends State<HomePage> {
           taskName: todoList[index][0],
           taskCompleted: todoList[index][1],
           onChanged: (value) =>checkBoxChanged(index),
+          deleteFunction: (contex)=> deleteTask(index),
         );
       }
       ),
 
-      floatingActionButton: Row(
-        children: [
-          Expanded(child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: TextField(
-              controller: _controller,
-              decoration:InputDecoration(
-                hintText: 'Add a new todo items',
-                filled: true,
-                fillColor: Colors.deepPurple.shade200,
-                enabledBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(
-                    color: Colors.white,
-                  ),
-                      borderRadius: BorderRadius.circular(15),
-              ),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Row(
+          children: [
+            Expanded(child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: TextField(
+                controller: _controller,
+                decoration:InputDecoration(
+                  hintText: 'Add a new todo items',
+                  filled: true,
+                  fillColor: Colors.deepPurple.shade200,
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      color: Colors.white,
+                    ),
+                        borderRadius: BorderRadius.circular(15),
+                ),
 
-              focusedBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(
-                    color: Colors.deepPurple,
-                  ),
-                  borderRadius: BorderRadius.circular(15),
+                focusedBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      color: Colors.deepPurple,
+                    ),
+                    borderRadius: BorderRadius.circular(15),
+              ),
+            ),
+         ),
             ),
           ),
-       ),
-    ),
-  ),
 
-          FloatingActionButton(
-              onPressed: saveNewTask,
-           child: const Icon(Icons.add),
-          ),
-        ],
+            FloatingActionButton(
+                onPressed: saveNewTask,
+             child: const Icon(Icons.add),
+            ),
+          ],
+        ),
       ),
     );
   }
